@@ -1,0 +1,20 @@
+<h2><%= post.title %></h2>
+<p><%= post.content %></p>
+<hr>
+
+<% comments.forEach(function(comment) { %>
+    <p><%= comment.name %></p>
+    <p><%= comment.content %></p>
+<% }) %>
+
+<hr>
+
+<h3><a href="/authors/<%= author.id %>"><%= author.name %></a></h3>
+
+<h2>Add a Comment</h2>
+
+<form action="/posts/<%= post.id %>" method="post">
+    <input type="text" name="name" id="" placeholder="What yer name?..."><br />
+    <input type="text" name="content" id="" placeholder="Say something..">
+    <button type="submit">Add Comment</button>
+</form>
